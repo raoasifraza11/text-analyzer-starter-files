@@ -5,6 +5,7 @@ $('#text-analyse').submit(function (event) {
     console.log(inputText);
     console.log(countWords(inputText));
     displayResult(countWords(inputText));
+    uniqueWords(inputText);
 });
 
 function countWords(text){
@@ -16,6 +17,20 @@ function countWords(text){
     }
 
     return sum;
+}
+
+function uniqueWords(text) {
+    var word = "";
+    var array = [];
+    var index = 0;
+    for(var i = 0; i < text.length; i++){
+        if(text[i] != " ") {
+            word += text[i];
+        }else if(text[i] == " "){
+            array[index++] = word;
+            word = "";
+        }
+    }
 }
 
 function displayResult(lenght) {
