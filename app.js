@@ -2,8 +2,7 @@
 $('#text-analyse').submit(function (event) {
     event.preventDefault();
     var inputText = $(event.currentTarget).find('textarea[name="user-text"]').val();
-    console.log(inputText);
-    console.log(countWords(inputText));
+
     displayResult(countWords(inputText));
     uniqueWords(inputText);
 });
@@ -31,6 +30,7 @@ function uniqueWords(text) {
             word = "";
         }
     }
+
 }
 
 function displayResult(lenght) {
