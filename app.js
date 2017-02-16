@@ -4,13 +4,18 @@ $('#text-analyse').submit(function (event) {
     var inputText = $(event.currentTarget).find('textarea[name="user-text"]').val();
     console.log(inputText);
     console.log(countWords(inputText));
-    displayResult(inputText.length)
+    displayResult(countWords(inputText));
 });
 
 function countWords(text){
+    var sum = 1;
     for(var i = 0; i < text.length; i++){
-
+        if(text[i] == " ") {
+            sum += 1;
+        }
     }
+
+    return sum;
 }
 
 function displayResult(lenght) {
